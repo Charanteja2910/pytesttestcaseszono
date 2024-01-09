@@ -22,10 +22,15 @@ files = {'file': open(file_path, 'rb')}
 response = requests.post(url, params=query_params, headers=headers, files=files)
 data = []
 for i in response.json():
-    a = {"pvId": i["productVariantId"], "qty": i["unitQuantity"], "PF_line_id": i["id"],"pf_id":i["poFileId"]}
-    data.append(a)
+    if i["status"] == "MAPPED":
+        a = {"pvId": i["productVariantId"], "qty": i["unitQuantity"], "PF_line_id": i["id"],"pf_id":i["poFileId"]}
+        data.append(a)
 
-def test_add_cart():
+# print(data)
+
+
+
+def add_cart():
     payload = {
     "customerId": main_workspace[0]["cId"],
     "sellerWorkspaceId": main_workspace[0]["pId"],
@@ -33,7 +38,7 @@ def test_add_cart():
     "poFileId": data[0]["pf_id"],
     "lines": [
         {
-            "productVariantId": [i]["pvId"],
+            "productVariantId": i["pvId"],
             "quantity": i["qty"],
             "poFileLineId": i["PF_line_id"]
         } for i in data
@@ -41,4 +46,4 @@ def test_add_cart():
 }
     url = main_url+"/commerce-v2/orders/additemtoactiveorder/"+f"{main_workspace[0]["pId"]}"
     response = postApi(url,payload)
-    print(response)
+    return response

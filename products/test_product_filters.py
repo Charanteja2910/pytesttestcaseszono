@@ -1,9 +1,4 @@
-import requests
-from settings.api_requests import postApi
-
+from orders.test_uploadfile import add_cart
+data = add_cart()
 def test_d():
-    payload = {
-        ""
-    }
-    url = ""
-    response = postApi()
+    print(data["orders"][0]["pofileId"])
