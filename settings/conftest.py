@@ -2,7 +2,7 @@ import pytest
 
 
 main_url = "https://api-uat.beta.pharmconnect.com"
-mobile_number= 9647297912
+mobile_number= 6661166666
 #9898989833
 #8008472669
 #9448066818
@@ -10,3 +10,6 @@ mobile_number= 9647297912
 #9810424353
 
 #9647297912
+
+#6661166666
+#9172266773

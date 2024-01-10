@@ -3,14 +3,17 @@ from user.test_login import main_workspace,main_token
 from settings.conftest import main_url
 from settings.api_requests import postApi
 
-file_path = r"C:\Users\USER\Downloads\RAJASTHAN DRUG HOUSE.xlsx"
+file_path = r"C:\Users\USER\Downloads\UAT PO.xlsx"
+# file_path = r"C:\Users\USER\Downloads\RAJASTHAN DRUG HOUSE.xlsx"
 
-url = main_url+"/commerce-v2/poFile/upload/"+ f"{main_workspace[0]["pId"]}"
-query_params = {
+url =main_url+"/commerce-v2/poFile/upload/"+f"{main_workspace[0]["pId"]}"+"?customerId="+f"{main_workspace[0]["cId"]}"+"&importSource=upload&parserType=C2D_ORDER"
+
+payload = {
     'customerId': main_workspace[0]["cId"],
     'importSource': 'upload',
     'parserType': 'C2D_ORDER'
 }
+
 headers = {
     'Authorization': 'Bearer '+f"{main_token}"
 }
@@ -19,7 +22,7 @@ headers = {
 files = {'file': open(file_path, 'rb')}
 
 # Make the request with the file
-response = requests.post(url, params=query_params, headers=headers, files=files)
+response = requests.post(url, payload, headers=headers, files=files)
 mapped_data = []
 unmapped_data = []
 for i in response.json():
@@ -27,7 +30,7 @@ for i in response.json():
         a = {"pvId": i["productVariantId"], "qty": i["unitQuantity"], "PF_line_id": i["id"],"pf_id":i["poFileId"]}
         mapped_data.append(a)
     else:
-        a = {"product_name": i["distributorProductName"], "data": {"pvId": i["productVariantId"], "qty": i["unitQuantity"], "PF_line_id": i["id"]}}
+        a = {"product_name": i["distributorProductName"], "data": {"pvId": i["productVariantId"], "qty": i["unitQuantity"], "PF_line_id": i["id"], "pf_id":i["poFileId"]}}
         unmapped_data.append(a)
 
 # print(mapped_data)
@@ -40,16 +43,23 @@ for i in unmapped_data:
     url = f"{main_url}/commerce-v2/products/search/{main_workspace[0]["pId"]}?customerId={main_workspace[0]["cId"]}"
     response = postApi(url,payload)
     if response["total"] != 0:
-        a = {"pvId": response["products"][0]["productVariants"][0]["productVariantId"],"qty":i["data"]["qty"],"PF_line_id":i["data"]["PF_line_id"]}
-        mapped_data.append(a)
+        if i["data"]["qty"] == 0:
+            a = {"pvId": response["products"][0]["productVariants"][0]["productVariantId"],"qty":response["products"][0]["productVariants"][0]["minOrderQty"],"PF_line_id":i["data"]["PF_line_id"],"pf_id":i["data"]["pf_id"]}
+            mapped_data.append(a)
+        else:
+            a = {"pvId": response["products"][0]["productVariants"][0]["productVariantId"],
+                 "qty": i["data"]["qty"],
+                 "PF_line_id": i["data"]["PF_line_id"], "pf_id": i["data"]["pf_id"]}
+            mapped_data.append(a)
     else:
         a = f"{i["product_name"]} not there in products"
         empty_data.append(a)
 
 
-# print(mapped_data)
-# print(empty_data)
+print(len(mapped_data))
 
+# for i in mapped_data:
+#     print(i)
 
 def add_cart():
     payload = {
@@ -68,3 +78,4 @@ def add_cart():
     url = main_url+"/commerce-v2/orders/additemtoactiveorder/"+f"{main_workspace[0]["pId"]}"
     response = postApi(url,payload)
     return response
+    # print(response)
