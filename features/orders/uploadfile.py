@@ -5,6 +5,9 @@ from settings.api_requests import postApi
 
 file_path = r"C:\Users\USER\Downloads\UAT PO.xlsx"
 # file_path = r"C:\Users\USER\Downloads\RAJASTHAN DRUG HOUSE.xlsx"
+# file_path = r"C:/Users/USER/Downloads/Book%20(6)_RAJ.pdf"
+
+
 
 url =main_url+"/commerce-v2/poFile/upload/"+f"{main_workspace[0]["pId"]}"+"?customerId="+f"{main_workspace[0]["cId"]}"+"&importSource=upload&parserType=C2D_ORDER"
 

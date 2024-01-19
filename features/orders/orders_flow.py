@@ -1,7 +1,7 @@
 
 from settings.conftest import main_url
 from user.test_login import main_workspace
-from products.test_products import get_products
+from products.get_products import get_products
 from settings.api_requests import postApi
 
 cart_response = []

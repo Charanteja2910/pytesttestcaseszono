@@ -14,7 +14,7 @@ def verify_mobile_otp(otp_res,mfa_no,main_url):
         "Authorization": "Bearer "+f"{otp_res["temptoken"]}"
     }
     response = requests.post(main_url+"/verifyotp", json = payload,headers = headers)
-    return response.json()
+    return response
 
 def verify_email_otp(otp_res,verify_mobile_res,main_url):
     payload = {
@@ -28,7 +28,7 @@ def verify_email_otp(otp_res,verify_mobile_res,main_url):
         "Authorization": "Bearer "+f"{verify_mobile_res["temptoken"]}"
     }
     response = requests.post(main_url+"/verifyotp", json = payload,headers = headers)
-    return response.json()
+    return response
 
 def get_workspacess(verify_email_res,main_url):
     headers = {
@@ -36,8 +36,4 @@ def get_workspacess(verify_email_res,main_url):
         "Authorization": "Bearer " + f"{verify_email_res["token"]}"
     }
     response = requests.get(main_url+"/workspaces",headers = headers)
-    for i in response.json():
-        for j in i["principal"]:
-            each_principal = {"pId": j["principalWorkspaceId"], "cId": j["inviteId"],"cwId": j["clientWorkspaceId"]}
-            workspaces.append(each_principal)
-    return workspaces
+    return response

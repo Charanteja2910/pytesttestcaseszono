@@ -1,7 +1,7 @@
 from settings.api_requests import postApi
 from settings.conftest import main_url
 from user.test_login import main_workspace
-from orders.test_uploadfile import add_cart
+from orders.uploadfile import add_cart
 
 
 data = add_cart()
