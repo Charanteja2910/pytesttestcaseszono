@@ -1,6 +1,6 @@
 import pytest
 import requests
-from user.test_login import token,workspace
+from user import token,workspace
 from settings.conftest import main_url
 
 @pytest.fixture

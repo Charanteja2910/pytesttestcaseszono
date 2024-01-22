@@ -11,7 +11,7 @@ def getApi(url):
 
 def postApi(url,payload):
     response = requests.post(url,json=payload,headers = headers)
-    return response.json()
+    return response
 
 def putApi(url,payload):
     response = requests.put(url, json=payload, headers = headers)
@@ -20,3 +20,8 @@ def putApi(url,payload):
 def deleteApi(url, payload):
     response = requests.delete(url, json= payload, headers = headers)
     return response.json()
+
+
+
+
+

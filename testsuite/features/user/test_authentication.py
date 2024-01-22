@@ -1,6 +1,6 @@
 from settings.conftest import mobile_number,main_url
-from user.users import send_otp
-from user.mfa_login import verify_mobile_otp,verify_email_otp,get_workspacess
+from user import send_otp
+from user import verify_mobile_otp,verify_email_otp,get_workspacess
 
 send_otp_response = send_otp(main_url,mobile_number)
 verify_mobile_res = verify_mobile_otp(send_otp_response.json(),mobile_number, main_url)

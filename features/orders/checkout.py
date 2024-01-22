@@ -2,7 +2,7 @@
 from settings.api_requests import postApi
 from settings.conftest import main_url
 from user.test_login import main_workspace
-from orders.orders_flow import cart_response
+from features.orders.orders_flow import cart_response
 
 
 

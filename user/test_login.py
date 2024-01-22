@@ -1,7 +1,7 @@
 
 from settings.conftest import main_url,mobile_number
-from features.user.users import send_otp,verify_otp,get_workspace
-from features.user.mfa_login import verify_mobile_otp,verify_email_otp, get_workspacess
+from user.users import send_otp,verify_otp,get_workspace
+from user.mfa_login import verify_mobile_otp,verify_email_otp, get_workspacess
 main_workspace = []
 main_token = ""
 send_otp_response = send_otp(main_url, mobile_number)
@@ -38,6 +38,5 @@ else:
 
 # print(main_workspace)
 # print(len(main_workspace))
-
 
 

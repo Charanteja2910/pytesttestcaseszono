@@ -1,6 +1,6 @@
 from settings.api_requests import postApi
 from settings.conftest import main_url
-from orders.cart_del import order_line_id,pofile_id
+from features.orders.cart_del import order_line_id,pofile_id
 from user.test_login import main_workspace
 
 def test_item_increment():
