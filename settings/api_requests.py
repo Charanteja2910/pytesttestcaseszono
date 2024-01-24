@@ -7,7 +7,7 @@ headers = {
 }
 def getApi(url):
     response = requests.get(url,headers = headers)
-    return response.json()
+    return response
 
 def postApi(url,payload):
     response = requests.post(url,json=payload,headers = headers)

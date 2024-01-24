@@ -3,7 +3,10 @@ from settings.conftest import main_url
 from features.orders.cart_del import order_line_id,pofile_id
 from user.test_login import main_workspace
 
-def test_item_increment():
+quantity_for_increment = 42
+quantity_for_decrement = 40
+# order_line_id[0]["qty"]+1
+def item_increment():
     payload = {
     "customerId": main_workspace[0]["cId"],
     "sellerWorkspaceId": main_workspace[0]["pId"],
@@ -11,19 +14,19 @@ def test_item_increment():
     "source": "manual",
     "lines": [
         {
-            "productVariantId": order_line_id[2]["pVId"],
-            "quantity": order_line_id[2]["qty"]*2,
+            "productVariantId": order_line_id[0]["pVId"],
+            "quantity": quantity,
             "operator": "add",
-            "poFileLineId": order_line_id[2]["id"]
+            "poFileLineId": order_line_id[0]["id"]
         }
     ]
     }
     url = main_url+"/commerce-v2/orders/additemtoactiveorder/"+f"{main_workspace[0]["pId"]}"
     response = postApi(url,payload)
-    print(response)
+    return response,order_line_id
 
 
-def test_item_decrement():
+def item_decrement():
     payload = {
         "customerId": main_workspace[0]["cId"],
         "sellerWorkspaceId": main_workspace[0]["pId"],
@@ -31,13 +34,13 @@ def test_item_decrement():
         "source": "manual",
         "lines": [
             {
-                "productVariantId": order_line_id[2]["pVId"],
-                "quantity": order_line_id[2]["qty"] / 2 ,
+                "productVariantId": order_line_id[0]["pVId"],
+                "quantity": quantity_for_decrement,
                 "operator": "minus",
-                "poFileLineId": order_line_id[2]["id"]
+                "poFileLineId": order_line_id[0]["id"]
             }
         ]
     }
     url = main_url + "/commerce-v2/orders/additemtoactiveorder/" + f"{main_workspace[0]["pId"]}"
     response = postApi(url, payload)
-    print(response)
+    return response,order_line_id
