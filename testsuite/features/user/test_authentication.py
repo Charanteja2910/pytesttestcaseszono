@@ -1,6 +1,6 @@
 from settings.conftest import mobile_number,main_url
-from user import send_otp
-from user import verify_mobile_otp,verify_email_otp,get_workspacess
+from user.users import send_otp
+from user.test_login import verify_mobile_otp,verify_email_otp,get_workspacess
 
 send_otp_response = send_otp(main_url,mobile_number)
 verify_mobile_res = verify_mobile_otp(send_otp_response.json(),mobile_number, main_url)
@@ -13,7 +13,7 @@ get_workspaces = get_workspacess(verify_email_res.json(), main_url)
 def test_send_otp():
     assert send_otp_response.status_code == 200
     assert "mobile" in send_otp_response.json()
-    assert len(str(send_otp_response.json()["mobile"]["otp"])) ==4
+    assert len(str(send_otp_response.json()["mobile"]["otp"])) == 4
     assert "temptoken" in send_otp_response.json()
     assert send_otp_response.json()["authChannel"] == "mobile"
     if (send_otp_response.json()["mfaStatus"]):
