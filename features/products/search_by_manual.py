@@ -3,7 +3,7 @@ from settings.api_requests import postApi
 from user.test_login import main_workspace
 
 
-a = "charanteja"
+a = "DULANE"
 def search_by_manual():
     payload = {
         "searchKey": a

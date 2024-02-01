@@ -19,7 +19,7 @@ def putApi(url,payload):
 
 def deleteApi(url, payload):
     response = requests.delete(url, json= payload, headers = headers)
-    return response.json()
+    return response
 
 
 

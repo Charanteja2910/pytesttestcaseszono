@@ -18,5 +18,6 @@ def test_search_by_manual():
     for i in res_data["products"]:
         assert (input_data in i["productVariants"][0]["sku"] or input_data in i["productVariants"][0]["name"]), "Assertion Failure Products Not Found"
     assert count == res_data["total"]
-    print(len(res_data["products"]))
+    print(res_data["products"])
+    print(res_data["total"])
 
