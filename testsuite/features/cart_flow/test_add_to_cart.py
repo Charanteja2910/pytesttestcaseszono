@@ -1,4 +1,3 @@
-
 from features.products.get_products import get_products
 from features.orders.orders_flow import add_to_cart
 
@@ -12,8 +11,8 @@ products_data = c[1]
 # print(cart_response.json())
 # print(products_data.json())
 
-for i in cart_response.json()["orders"][0]["orderLine"]:
-    print(i["productVariantId"])
+# for i in cart_response.json()["orders"][0]["orderLine"]:
+#     print(i["productVariantId"])
 # for j in products_data.json()["products"][0]["productVariants"]:
 #     print(j["productVariantId"])
 

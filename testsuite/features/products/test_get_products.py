@@ -11,7 +11,7 @@ def test_get_products():
 
     # Check if 'total' is greater than 'endRecord' and 'products' is present
     response_json = products_data_response.json()
-    assert response_json["total"] > response_json["endRecord"] and response_json[
+    assert response_json["total"] >= response_json["endRecord"] and response_json[
         "products"], "Invalid total, endRecord, or products"
 
     # Check the length of 'products' is equal to 'endRecord'

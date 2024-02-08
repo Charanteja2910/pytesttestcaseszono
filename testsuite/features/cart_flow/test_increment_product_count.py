@@ -7,7 +7,6 @@ increment_response = item_increment()
 increment_data = increment_response[0].json()
 item_quantity = increment_response[1][0]["qty"]
 productVariantId = increment_response[1][0]["pVId"]
-
 pofile_response =get_pofile_data().json()
 
 ids_in_pofile = []

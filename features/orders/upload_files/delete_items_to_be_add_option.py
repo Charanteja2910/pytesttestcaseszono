@@ -13,10 +13,12 @@ pofile_id = data[0]
 
 po_details_res = pofile_data(pofile_id)
 po_file_line_ids = []
-
-for i in po_details_res.json()["lines"]:
-    if i["status"] == "UNMAPPED":
-        po_file_line_ids.append(i["poFileLineId"])
+if po_details_res.json() == []:
+    print(f"products not there in the {pofile_id}")
+else:
+    for i in po_details_res.json()["lines"]:
+        if i["status"] == "UNMAPPED":
+            po_file_line_ids.append(i["poFileLineId"])
 
 # items_deleted = len(po_file_line_ids)
 # data_length = len(po_details_res.json()["lines"])
