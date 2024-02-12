@@ -36,7 +36,7 @@ else:
             main_workspace.append(each_principal)
 
 
-# print(main_workspace)
+print(main_workspace)
 # print(len(main_workspace))
 # print(main_token)
 

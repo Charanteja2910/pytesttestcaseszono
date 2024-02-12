@@ -1,8 +1,8 @@
 import pytest
 
 
-main_url = "https://api-uat.beta.pharmconnect.com"
-mobile_number= 9647297912
+main_url = "https://api-qa.beta.pharmconnect.com"
+mobile_number= 9898989833
 
 # 9898989833
 # 9647297912
