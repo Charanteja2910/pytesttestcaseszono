@@ -5,25 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="175fc7bf-b464-4d4c-b77f-83ee714358a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/features/Home/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/Home/cumulative_orders.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/Home/cumulative_returns.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/returns/get_returns.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testsuite/features/Home/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testsuite/features/Home/test_cumulative_orders.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testsuite/features/Home/test_cumulative_returns.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/Home/principle_invite.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/Teams/Delete_member.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/Teams/Edit_member_details.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/Teams/Member_login/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/Teams/Member_login/login_process.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/Teams/Member_login/member_accept_invite.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/Teams/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/Teams/add_member.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/Teams/edit_member_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/Teams/edit_member_number.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/Teams/get_role_ids.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/Teams/team_members_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/orders/orders_count_of_multiple_principals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/create_return_order.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/get_cfa.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/get_header_divisions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/get_num_of_batches_contains_product.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/return_delete.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/return_details.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/return_submit_by_customer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/returns_count_of_multiple_priniciples.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/search_based_on_batch_num.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/upload_returns/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/upload_returns/edit_upload_return_file.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/upload_returns/submit_return.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/upload_returns/upload_file.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/upload_returns/upload_file_res.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/returns/upload_returns/upload_return_details.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/Home/test_principal_invite.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/Teams/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/Teams/test_accept_invite.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/Teams/test_add_member.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/Teams/test_delete_member.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/Teams/test_edit_member_details.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/Teams/test_edit_member_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/Teams/test_edit_mobile_number.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/returns/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/returns/test_batch_num_by_search_num.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/returns/test_create_return.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/returns/test_edit_upload_return_file.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/returns/test_submit_return.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/returns/test_upload_file_res.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testsuite/features/returns/test_upload_submit_return.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user/mfa_login.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user/test_login.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pytestproject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/Home/cumulative_orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/Home/cumulative_orders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/Home/cumulative_returns.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/Home/cumulative_returns.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/returns/get_returns.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/returns/get_returns.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testsuite/features/cart_flow/upload_file/test_upload_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/features/cart_flow/upload_file/test_upload_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testsuite/features/Home/test_cumulative_orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/features/Home/test_cumulative_orders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testsuite/features/Home/test_cumulative_returns.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsuite/features/Home/test_cumulative_returns.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,11 +110,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Desktop\pytestproject\testsuite\features" />
+      <recent name="C:\Users\USER\Desktop\pytestproject\features\returns" />
       <recent name="C:\Users\USER\Desktop\pytestproject" />
       <recent name="C:\Users\USER\Desktop\pytestproject\features" />
       <recent name="C:\Users\USER\Desktop\pytestproject\user" />
-      <recent name="C:\Users\USER\Desktop\pytestproject\products" />
-      <recent name="C:\Users\USER\Desktop\pytestproject\settings" />
     </key>
   </component>
   <component name="RunManager" selected="Python.user">

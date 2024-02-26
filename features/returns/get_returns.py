@@ -24,6 +24,6 @@ def payload():
 
 def get_returns(a= payload()):
     payload = a
-    url = f"{main_url}/claims/return-orders/list/{main_workspace[0]["pId"]}"
+    url = f"{main_url}/hub/claims/return-orders/list/{main_workspace[0]["pId"]}"
     res = postApi(url,payload)
     return res

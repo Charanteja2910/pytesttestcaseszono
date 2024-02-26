@@ -1,7 +1,6 @@
 from user.test_login import main_workspace
 from settings.conftest import main_url
 from settings.api_requests import postApi
-from features.returns.get_returns import get_returns,payload
 from datetime import date
 
 today_date = date.today()
@@ -13,11 +12,6 @@ day = 1
 
 start_date = f"{year:04d}-{month:02d}-{day:02d}"
 
-req_payload = payload()
-req_payload["startDate"] =start_date
-req_payload["endDate"] = formatted_date
-
-returns_res = get_returns(req_payload)
 
 
 def cumulative_returns():
@@ -25,6 +19,7 @@ def cumulative_returns():
         "endDate": f"{formatted_date}",
         "startDate": f"{start_date}"
     }
-    url = f"{main_url}/claims/return-orders/cumulative/{main_workspace[0]["pId"]}?customerWorkspaceId={main_workspace[0]["cwId"]}"
+    url = f"{main_url}/hub/claims/return-orders/cumulative/{main_workspace[0]["pId"]}?customerWorkspaceId={main_workspace[0]["cwId"]}&sellerWorkspaceId={main_workspace[0]["pId"]}"
     res = postApi(url,payload)
     return res
+    # print(res.json())
